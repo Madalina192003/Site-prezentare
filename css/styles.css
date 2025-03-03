@@ -1117,6 +1117,30 @@ select:focus {
   line-height: 1.8;
 }
 
+.faq-item {
+  background-color: #fff;
+  border: 2px solid var(--primary-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.faq-item h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.faq-item p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
 /* ================ ANIMATIONS ================ */
 @keyframes slideUp {
   from {
@@ -1210,6 +1234,37 @@ select:focus {
     grid-row: 1;
     max-width: 50rem;
     margin: 0 auto;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    padding-top: 5rem;
+    transition: var(--transition);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-menu li {
+    margin: 1.5rem 0;
   }
 }
 
@@ -1344,4 +1399,53 @@ select:focus {
   right: 1rem;
   font-size: 2rem;
   cursor: pointer;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  z-index: 1000;
+  padding-top: 0;
+  transition: var(--transition);
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-menu ul {
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-menu li {
+  margin: 0 1.5rem;
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.menu-overlay.active {
+  display: block;
 }
