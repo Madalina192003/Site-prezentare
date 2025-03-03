@@ -1245,8 +1245,8 @@ select:focus {
     flex-direction: column;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: -100%;
+    width: 80%;
     height: 100%;
     background-color: #fff;
     z-index: 1000;
@@ -1255,7 +1255,7 @@ select:focus {
   }
 
   .nav-menu.active {
-    display: flex;
+    right: 0;
   }
 
   .nav-menu ul {
