@@ -1344,16 +1344,26 @@ select:focus {
   }
 
   .menu-toggle {
-    display: block;
+    display: flex;
     position: fixed;
     top: 2rem;
     right: 2rem;
-    z-index: 1002;
+    width: 4.5rem;
+    height: 4.5rem;
     background: var(--primary-color);
-    padding: 1rem;
     border-radius: 50%;
+    align-items: center;
+    justify-content: center;
     color: white;
+    font-size: 2.4rem;
+    cursor: pointer;
+    z-index: 1002;
     box-shadow: var(--box-shadow);
+    transition: var(--transition);
+  }
+
+  .menu-toggle:hover {
+    transform: scale(1.1);
   }
 
   .nav-menu {
@@ -1365,9 +1375,8 @@ select:focus {
     height: 100vh;
     background: rgba(255, 255, 255, 0.98);
     z-index: 1001;
-    justify-content: center;
     align-items: center;
-    transition: 0.3s ease-in-out;
+    justify-content: center;
   }
 
   .nav-menu.active {
@@ -1376,12 +1385,26 @@ select:focus {
 
   .nav-menu ul {
     flex-direction: column;
-    align-items: center;
     gap: 3rem;
   }
 
   .nav-menu li {
-    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .nav-menu.active li {
+    animation: slideIn 0.5s forwards;
+  }
+
+  .nav-menu li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .nav-menu li:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .nav-menu li:nth-child(3) {
+    animation-delay: 0.3s;
   }
 
   .nav-menu a {
@@ -1407,7 +1430,7 @@ select:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -1416,6 +1439,10 @@ select:focus {
   .menu-overlay.active {
     display: block;
     opacity: 1;
+  }
+
+  body.menu-open {
+    overflow: hidden;
   }
 }
 
