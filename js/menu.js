@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
   function toggleMenu() {
+    // Toggle menu
     menuToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
     body.classList.toggle("menu-open");
@@ -16,13 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Event listeners
+  // Toggle menu on button click
   menuToggle.addEventListener("click", toggleMenu);
 
   // Close menu when clicking links
   const navLinks = document.querySelectorAll(".nav-menu a");
   navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (e) => {
       if (window.innerWidth <= 768) {
         toggleMenu();
       }
