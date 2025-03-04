@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuIcon = menuToggle.querySelector("i");
 
   function toggleMenu() {
+    menuToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
     body.classList.toggle("menu-open");
+
+    // Schimbă iconița între hamburger și x
     menuIcon.classList.toggle("fa-bars");
     menuIcon.classList.toggle("fa-times");
   }
@@ -16,13 +19,23 @@ document.addEventListener("DOMContentLoaded", function () {
   // Închide meniul când se face click pe un link
   const navLinks = document.querySelectorAll(".nav-menu a");
   navLinks.forEach((link) => {
-    link.addEventListener("click", toggleMenu);
+    link.addEventListener("click", () => {
+      toggleMenu();
+    });
   });
 
   // Închide meniul la resize
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768 && navMenu.classList.contains("active")) {
       toggleMenu();
+    }
+  });
+
+  // Actualizează clasa active pentru link-ul curent
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
     }
   });
 });

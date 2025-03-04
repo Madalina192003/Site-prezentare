@@ -1044,47 +1044,6 @@ select:focus {
   border: none;
 }
 
-/* ================ BLOG SECTION ================ */
-.blog {
-  padding: 10rem 0;
-  background-color: #f9f9f9;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 3rem;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.blog-post {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: var(--box-shadow);
-  text-align: center;
-  transition: var(--transition);
-}
-
-.blog-post img {
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-}
-
-.blog-post h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.blog-post p {
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-}
-
-.blog-post .btn {
-  display: inline-block;
-}
-
 /* ================ FAQ SECTION ================ */
 .faq {
   padding: 10rem 0;
@@ -1348,22 +1307,30 @@ select:focus {
     position: fixed;
     top: 2rem;
     right: 2rem;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4rem;
+    height: 4rem;
     background: var(--primary-color);
     border-radius: 50%;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 2.4rem;
+    font-size: 2rem;
     cursor: pointer;
     z-index: 1002;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
   }
 
   .menu-toggle:hover {
     transform: scale(1.1);
+  }
+
+  .menu-toggle i {
+    transition: transform 0.3s ease;
+  }
+
+  .menu-toggle.active i {
+    transform: rotate(180deg);
   }
 
   .nav-menu {
@@ -1373,29 +1340,39 @@ select:focus {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.98);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.95)
+    );
+    backdrop-filter: blur(10px);
     z-index: 1001;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .nav-menu.active {
     display: flex;
+    opacity: 1;
   }
 
   .nav-menu ul {
     flex-direction: column;
+    gap: 2.5rem;
+    padding: 0;
     text-align: center;
   }
 
   .nav-menu li {
-    margin: 2rem 0;
+    margin: 0;
     opacity: 0;
     transform: translateY(20px);
   }
 
   .nav-menu.active li {
-    animation: slideIn 0.5s forwards;
+    animation: slideInUp 0.5s forwards;
   }
 
   .nav-menu li:nth-child(1) {
@@ -1410,10 +1387,31 @@ select:focus {
 
   .nav-menu a {
     font-size: 2.4rem;
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--dark-color);
+    position: relative;
+    padding: 0.5rem 2rem;
+    transition: color 0.3s ease;
   }
 
-  @keyframes slideIn {
+  .nav-menu a:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+  }
+
+  .nav-menu a:hover:before,
+  .nav-menu a.active:before {
+    width: 80%;
+  }
+
+  @keyframes slideInUp {
     from {
       opacity: 0;
       transform: translateY(20px);
@@ -1422,24 +1420,6 @@ select:focus {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  .menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .menu-overlay.active {
-    display: block;
-    opacity: 1;
   }
 
   body.menu-open {
