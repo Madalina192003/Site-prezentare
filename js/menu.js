@@ -9,25 +9,39 @@ document.addEventListener("DOMContentLoaded", () => {
   menuOverlay.classList.add("menu-overlay");
   body.appendChild(menuOverlay);
 
-  function toggleMenu() {
+  function toggleMenu(event) {
     menuToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
     menuOverlay.classList.toggle("active");
     body.classList.toggle("menu-open");
 
     // Schimbă iconița între hamburger și x
-    menuIcon.classList.toggle("fa-bars");
-    menuIcon.classList.toggle("fa-times");
+    const icon = menuToggle.querySelector("i");
+    if (icon) {
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    }
+
+    // Previne comportamentul implicit doar pentru click-uri pe hamburger sau overlay
+    if (event) {
+      event.preventDefault();
+    }
   }
 
   // Event listeners
-  menuToggle.addEventListener("click", toggleMenu);
+  if (menuToggle) {
+    menuToggle.addEventListener("click", toggleMenu);
+  }
   menuOverlay.addEventListener("click", toggleMenu);
 
   // Închide meniul când se face click pe un link
   const navLinks = document.querySelectorAll(".nav-menu a");
   navLinks.forEach((link) => {
-    link.addEventListener("click", toggleMenu);
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        toggleMenu();
+      }
+    });
   });
 
   // Închide meniul la resize

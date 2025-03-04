@@ -215,6 +215,40 @@ img {
   cursor: pointer;
 }
 
+/* Stiluri pentru meniul normal - vizibil doar pe desktop */
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
+}
+
 /* ================ HERO SECTION ================ */
 .hero {
   height: 100vh;
