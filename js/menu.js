@@ -1,31 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Selectăm elementele necesare
+document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const body = document.body;
+  const menuIcon = menuToggle.querySelector("i");
 
-  if (!menuToggle || !navMenu) {
-    console.error("Menu elements not found!");
-    return;
-  }
-
-  // Adăugăm overlay-ul pentru fundal
+  // Creează overlay-ul pentru fundal
   const menuOverlay = document.createElement("div");
   menuOverlay.classList.add("menu-overlay");
   body.appendChild(menuOverlay);
 
   function toggleMenu() {
-    // Toggle pentru meniu
+    menuToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
     menuOverlay.classList.toggle("active");
     body.classList.toggle("menu-open");
 
     // Schimbă iconița între hamburger și x
-    const icon = menuToggle.querySelector("i");
-    if (icon) {
-      icon.classList.toggle("fa-bars");
-      icon.classList.toggle("fa-times");
-    }
+    menuIcon.classList.toggle("fa-bars");
+    menuIcon.classList.toggle("fa-times");
   }
 
   // Event listeners
@@ -45,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Actualizează clasa active pentru link-ul curent
+  // Adaugă clasa active pentru pagina curentă
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   navLinks.forEach((link) => {
     if (link.getAttribute("href") === currentPage) {
