@@ -84,6 +84,18 @@ img {
   padding-top: 60px;
 }
 
+@media screen and (max-width: 768px) {
+  .products-section,
+  .contact-section,
+  .form-section {
+    padding-top: 20px;
+  }
+
+  .section-header {
+    margin-top: 0;
+  }
+}
+
 .section-header {
   text-align: center;
   margin: 0;
