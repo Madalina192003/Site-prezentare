@@ -73,26 +73,38 @@ img {
   padding: 0 2rem;
 }
 
+.header {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(0, 170, 255, 0.1);
+}
+
+.products-section,
+.contact-section,
+.form-section {
+  padding-top: 60px;
+}
+
 .section-header {
   text-align: center;
-  margin-bottom: 5rem;
-  animation: fadeInUp 1s ease-in-out;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .section-header h2 {
-  font-size: 3.6rem;
-  margin-bottom: 1rem;
-
-  position: relative;
-  display: inline-block;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  font-size: 2.5rem;
+  color: #333;
 }
 
 .underline {
-  height: 0.3rem;
-  width: 6rem;
-  background: var(--gradient-primary);
+  height: 3px;
+  width: 100px;
+  background: #00aaff;
   margin: 0 auto;
-  border-radius: 1rem;
 }
 
 .btn {
@@ -138,14 +150,9 @@ img {
 
 /* ================ HEADER ================ */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
+  position: relative;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .header.scrolled {
@@ -157,9 +164,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
-  max-width: 120rem;
-  margin: 0 auto;
+  padding: 1rem 2rem;
+  gap: 2rem;
 }
 
 .logo h1 {
@@ -247,6 +253,32 @@ img {
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
   width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+  }
 }
 
 /* ================ HERO SECTION ================ */
@@ -1504,6 +1536,7 @@ select:focus {
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -1648,14 +1681,50 @@ select:focus {
   }
 }
 
-/* End extra styles */
-.products-section .section-header {
-  padding-top: 6rem;
-}
+/* Mobile header styles */
+@media screen and (max-width: 768px) {
+  .header-container {
+    position: relative;
+    padding-top: 1rem;
+    display: grid;
+    grid-template-areas:
+      "logo menu"
+      "title menu";
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
 
-@media screen and (max-width: 576px) {
-  .products-section .section-header {
-    padding-top: 8rem;
+  .logo {
+    grid-area: logo;
+    justify-self: center;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-toggle {
+    grid-area: menu;
+    justify-self: end;
+    align-self: start;
+  }
+
+  .company-title {
+    grid-area: title;
+    justify-self: center;
+    text-align: center;
   }
 }
 
@@ -1666,4 +1735,26 @@ select:focus {
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.hero,
+.form-section,
+.contact-section {
+  margin-top: 2rem !important;
+}
+
+.product-section {
+  padding-top: 2rem;
+}
+
+.category-title {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hero,
+  .form-section,
+  .contact-section {
+    margin-top: 1rem !important;
+  }
 }
