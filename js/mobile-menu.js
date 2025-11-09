@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function toggleMenu() {
     menuToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
+    document.documentElement.classList.toggle("overlay-active");
+    document.body.classList.toggle("overlay-active");
 
     const icon = menuToggle.querySelector("i");
     if (icon) {
@@ -16,22 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.add("fa-bars");
       }
     }
-
-    document.body.style.overflow = navMenu.classList.contains("active")
-      ? "hidden"
-      : "";
   }
 
   menuToggle.addEventListener("click", toggleMenu);
 
-  // Make sure menu links are clickable
   const menuLinks = document.querySelectorAll(".nav-menu a");
   menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 768) {
-        setTimeout(() => {
-          toggleMenu();
-        }, 100);
+        toggleMenu();
       }
     });
   });
