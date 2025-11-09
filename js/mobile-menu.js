@@ -23,17 +23,24 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.overflow = "";
   }
 
-  menuToggle.addEventListener("click", function () {
-    if (navMenu.classList.contains("active")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+      if (navMenu.classList.contains("active")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
 
-  menuOverlay.addEventListener("click", closeMenu);
+  if (menuOverlay) {
+    menuOverlay.addEventListener("click", closeMenu);
+  }
 
-  document.querySelectorAll(".nav-menu a").forEach(function (link) {
-    link.addEventListener("click", closeMenu);
-  });
+  var menuLinks = document.querySelectorAll(".nav-menu a");
+  if (menuLinks && menuLinks.length) {
+    menuLinks.forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+  }
 });
