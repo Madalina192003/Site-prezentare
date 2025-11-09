@@ -6,4 +6,4 @@ Site de prezentare produse Atomy
 
 Website pentru First Line Center Atomy Alba Iulia.
 
-Vezi site-ul live la: [https://madalina192003.github.io/Site-prezentare/](https://madalina192003.github.io/Site-prezentare/)
+Vezi site-ul live la: [![alt text](image.png)](https://madalina192003.github.io/Site-prezentare/)
