@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var navMenu = document.querySelector(".nav-menu");
   var menuOverlay = document.querySelector(".menu-overlay");
 
+  if (!menuToggle || !navMenu) return;
+
   if (!menuOverlay) {
     menuOverlay = document.createElement("div");
     menuOverlay.className = "menu-overlay";
