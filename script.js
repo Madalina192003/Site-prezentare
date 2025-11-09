@@ -180,21 +180,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   handleScrollAnimation();
-
-  // Mobile Menu
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector(".nav-menu");
-  const menuOverlay = document.createElement("div");
-  menuOverlay.classList.add("menu-overlay");
-  document.body.appendChild(menuOverlay);
-
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-    menuOverlay.classList.toggle("active");
-  });
-
-  menuOverlay.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-    menuOverlay.classList.remove("active");
-  });
 });
