@@ -535,21 +535,57 @@ img {
   background-color: var(--primary-color);
 }
 
+.testimonial-flex {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.testimonial-flex .about-image {
+  display: inline-block;
+  max-width: 200px;
+  flex: 0 0 200px;
+}
+
+.testimonial-flex img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px #eee;
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial-flex {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .testimonial-flex .about-image {
+    max-width: 120px;
+    margin-bottom: 1rem;
+  }
+}
+
 /* ================ CTA SECTION ================ */
 .cta {
+  background: #fff !important;
+  color: var(--dark-color);
   padding: 8rem 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("/api/placeholder/1600/900");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #fff;
   text-align: center;
+}
+
+.cta-content {
+  max-width: 60rem;
+  margin: 0 auto;
 }
 
 .cta-content h2 {
   font-size: 3.6rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
 
 .cta-content p {
@@ -566,9 +602,28 @@ img {
 
 /* ================ FOOTER ================ */
 .footer {
-  background-color: var(--dark-color);
+  background-color: #0090d0 !important; /* albastru solid, fără transparență */
   color: #fff;
   padding: 5rem 0 0;
+}
+
+.footer h4,
+.footer-logo h3 {
+  color: #fff;
+}
+
+.footer-links a {
+  color: #fff;
+  opacity: 0.95;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-content {
@@ -603,13 +658,12 @@ img {
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   transition: var(--transition);
 }
 
 .footer-links a:hover {
-  color: var(--primary-color);
-  padding-left: 0.5rem;
+  color: #fff;
 }
 
 .footer-contact p {
@@ -647,7 +701,7 @@ img {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 2rem 0;
   text-align: center;
 }
@@ -1268,6 +1322,10 @@ select:focus {
   .testimonial-content {
     padding: 3rem 2rem;
   }
+
+  .products-section .section-header {
+    padding-top: 8rem;
+  }
 }
 
 /* ================ POPUP ================ */
@@ -1353,4 +1411,259 @@ select:focus {
 
 .menu-overlay.active {
   display: block;
+}
+
+/* ================ EXTRA: WhatsApp, Cookies, Product Filters, Video & Contact STYLES ================ */
+
+/* Hide ordering / add-to-cart UI elements (markup may vary, update selectors if needed) */
+.order-button,
+.add-to-cart,
+.product-actions .order,
+.product-order-btn {
+  display: none !important;
+}
+
+/* WhatsApp floating button */
+.whatsapp-btn {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 5.2rem;
+  height: 5.2rem;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-4px);
+}
+
+.whatsapp-btn i {
+  font-size: 2.4rem;
+}
+
+/* Cookie consent banner */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 1.4rem 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3000;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cookie-banner p {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--dark-color);
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.cookie-btn {
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.cookie-accept {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.cookie-reject {
+  background: transparent;
+  color: var(--dark-color);
+  border: 1px solid #ddd;
+}
+
+/* Product filter bar */
+.product-filter-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.category-filter-btn {
+  padding: 0.8rem 1.6rem;
+  background: #f1f1f1;
+  border-radius: 5rem;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.category-filter-btn.active {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: var(--box-shadow);
+}
+
+/* Product card: video badge and read-more */
+.product-card .video-badge {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product-card .read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Collapsible product description */
+.product-detail {
+  max-height: 9rem;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.product-detail.expanded {
+  max-height: 60rem;
+}
+
+/* Video modal overlay (basic) */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 4000;
+  padding: 2rem;
+}
+
+.video-modal.active {
+  display: flex;
+}
+
+.video-modal .video-wrap {
+  width: 100%;
+  max-width: 110rem;
+  background: #000;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.video-modal iframe,
+.video-modal video {
+  width: 100%;
+  height: 60rem;
+  display: block;
+}
+
+/* Contact page: schedule & map styling */
+.contact-schedule {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+}
+
+.contact-schedule h4 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+}
+
+.contact-schedule ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-schedule li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed #eee;
+  font-size: 1.4rem;
+}
+
+.contact-map {
+  min-height: 35rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+/* Small tweaks */
+.product-filter-bar + .products-grid {
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 576px) {
+  .whatsapp-btn {
+    right: 1rem;
+    bottom: 1rem;
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .video-modal .video-wrap {
+    width: 100%;
+  }
+}
+
+/* End extra styles */
+.products-section .section-header {
+  padding-top: 6rem;
+}
+
+@media screen and (max-width: 576px) {
+  .products-section .section-header {
+    padding-top: 8rem;
+  }
+}
+
+.features,
+.about,
+.testimonials,
+.faq,
+.cta {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
