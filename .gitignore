@@ -1,9 +1,5 @@
 .DS_Store
 Thumbs.db
 desktop.ini
-node_modules/
 .vscode/
 *.log
-.sass-cache/
-.jekyll-cache/
-_site/
