@@ -1,0 +1,110 @@
+/* Header și Logo */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+/* Meniul hamburger - vizibil doar pe mobil */
+.menu-toggle {
+  display: none;
+  font-size: 2.4rem;
+  cursor: pointer;
+  z-index: 1001;
+  color: #00aaff;
+}
+
+.menu-toggle i {
+  color: #00aaff;
+}
+
+/* Mobile Menu Styles */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 2.5rem;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    padding-top: 8rem;
+    transition: 0.3s;
+    z-index: 999;
+    visibility: hidden;
+  }
+
+  .nav-menu.active {
+    right: 0;
+    visibility: visible;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+
+  .nav-menu li {
+    margin: 1.5rem 0;
+    width: 100%;
+  }
+
+  .nav-menu a {
+    font-size: 1.8rem;
+    width: 100%;
+    display: block;
+    color: #000;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+  }
+
+  .menu-overlay.active {
+    display: block;
+  }
+}
+
+/* Desktop menu */
+@media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    visibility: visible;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-menu li {
+    margin: 0;
+  }
+
+  .menu-overlay {
+    display: none;
+  }
+}

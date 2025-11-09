@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produse - Atomy România</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/mobile-menu.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body data-whatsapp="+40722232528">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <div class="logo" style="display: flex; align-items: center; gap: 2rem">
+          <a href="index.html" style="display: inline-block">
+            <img
+              src="poze/logo1.png"
+              alt="Atomy România"
+              style="height: 8rem; max-width: 100%; object-fit: contain"
+            />
+          </a>
+          <div
+            style="display: flex; flex-direction: column; align-items: flex-start"
+          >
+            <span
+              style="
+                font-size: 1.7rem;
+                font-weight: 700;
+                line-height: 1.1;
+                color: #00aaff;
+              "
+            >
+              Atomy
+              <span style="color: #00aaff; font-weight: 400">Alba Iulia</span>
+            </span>
+            <span
+              style="
+                font-size: 1.1rem;
+                font-weight: 400;
+                color: #00aaff;
+              "
+            >
+              - First Line Center
+            </span>
+          </div>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="produse.html" class="active">Produse</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="formular.html">Înscrie-te</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products-section" style="margin-top: 7rem">
+      <div class="container">
+        <div class="section-header" style="margin-top:5.5rem;">
+          <h2>Produsele Atomy</h2>
+          <div class="underline"></div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="product-filter-bar">
+          <button class="category-filter-btn active" data-category="all">
+            Toate Produsele
+          </button>
+          <button class="category-filter-btn" data-category="cosmetice">
+            Cosmetice
+          </button>
+          <button class="category-filter-btn" data-category="sanatate">
+            Sănătate
+          </button>
+          <button class="category-filter-btn" data-category="ingrijire">
+            Îngrijire Personală
+          </button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+          <!-- Cremă de mâini -->
+          <div class="product-card" data-category="ingrijire">
+            <div class="product-image">
+              <img src="poze/crema_maini.jpg" alt="Cremă de mâini Atomy" />
+            </div>
+            <div class="product-info">
+              <h3>Cremă de mâini Atomy</h3>
+              <div class="product-detail">
+                Cremă hidratantă pentru mâini, cu absorbție rapidă.
+                <span class="more-text"></span>
+                  Formula cu extracte naturale lasă pielea catifelată,
+                  protejează împotriva uscării și oferă un parfum discret.
+                  Ideală pentru utilizare zilnică, nu lasă peliculă grasă.</span
+                >
+              </div>
+              <span
+                class="read-more"
+                data-title="Cremă de mâini Atomy"
+                data-img="poze/crema_maini.jpg"
+                data-desc="Cremă de mâini Atomy conține ingrediente naturale, hidratează intens și protejează pielea de factorii externi. Se absoarbe rapid, nu lasă urme grase și are un parfum plăcut. Recomandată pentru toate tipurile de piele, inclusiv sensibilă."
+                >Citește mai mult</span
+              >
+            </div>
+          </div>
+          <!-- Evening Care -->
+          <div class="product-card" data-category="cosmetice">
+            <div class="product-image">
+              <img src="poze/evening_care.jpg" alt="Evening Care Set Atomy" />
+            </div>
+            <div class="product-info">
+              <h3>Evening Care Set</h3>
+              <div class="product-detail">
+                Set complet pentru curățarea și îngrijirea tenului.
+                <span class="more-text">
+                  Include spumă de curățare, peeling gel, deep cleanser și
+                  mască. Curăță în profunzime, exfoliază delicat și hidratează
+                  pielea, lăsând-o luminoasă și sănătoasă.</span
+                >
+              </div>
+              <span
+                class="read-more"
+                data-title="Evening Care Set"
+                data-img="poze/evening_care.jpg"
+                data-desc="Evening Care Set Atomy este rutina ideală pentru tenul obosit sau încărcat. Produsele elimină impuritățile, exfoliază delicat și hidratează, pregătind pielea pentru regenerare peste noapte. Recomandat pentru toate tipurile de ten."
+                >Citește mai mult</span
+              >
+            </div>
+          </div>
+          <!-- Hair Oil -->
+          <div class="product-card" data-category="ingrijire">
+            <div class="product-image">
+              <img src="poze/hair_oil.jpg" alt="Hair Oil Atomy" />
+            </div>
+            <div class="product-info">
+              <h3>Hair Oil Atomy</h3>
+              <div class="product-detail">
+                Ulei pentru păr cu efect de hidratare și strălucire.
+                <span class="more-text">
+                  Protejează firul de păr, reduce vârfurile despicate și oferă
+                  un aspect sănătos. Se aplică pe părul umed sau uscat, nu
+                  îngrașă și nu încarcă.</span
+                >
+              </div>
+              <span
+                class="read-more"
+                data-title="Hair Oil Atomy"
+                data-img="poze/hair_oil.jpg"
+                data-desc="Hair Oil Atomy conține uleiuri vegetale, hrănește și repară părul deteriorat. Oferă strălucire, protejează împotriva factorilor externi și previne despicarea vârfurilor. Ideal pentru toate tipurile de păr, inclusiv vopsit sau uscat."
+                >Citește mai mult</span
+              >
+            </div>
+          </div>
+          <!-- Pasta de dinți -->
+          <div class="product-card" data-category="ingrijire">
+            <div class="product-image">
+              <img src="poze/pasta_de_dinti.jpg" alt="Pasta de dinți Atomy" />
+            </div>
+            <div class="product-info">
+              <h3>Pasta de dinți Atomy</h3>
+              <div class="product-detail">
+                Pasta de dinți cu propolis și ceai verde pentru igienă orală.
+                <span class="more-text">
+                  Protejează gingiile, previne cariile și oferă respirație
+                  proaspătă. Fără parabeni, potrivită pentru întreaga
+                  familie.</span
+                >
+              </div>
+              <span
+                class="read-more"
+                data-title="Pasta de dinți Atomy"
+                data-img="poze/pasta_de_dinti.jpg"
+                data-desc="Pasta de dinți Atomy combină propolisul și ceaiul verde pentru o protecție naturală a dinților și gingiilor. Recomandată pentru prevenirea cariilor, albirea dinților și menținerea sănătății orale."
+                >Citește mai mult</span
+              >
+            </div>
+          </div>
+          <!-- Șampon -->
+          <div class="product-card" data-category="ingrijire">
+            <div class="product-image">
+              <img src="poze/sampon.jpg" alt="Șampon Atomy" />
+            </div>
+            <div class="product-info">
+              <h3>Șampon Atomy</h3>
+              <div class="product-detail">
+                Șampon cu ingrediente naturale pentru păr sănătos.
+                <span class="more-text">
+                  Curăță delicat scalpul, hidratează și oferă volum. Potrivit
+                 
+                  strălucitor.</span
+                >
+              </div>
+              <span
+                class="read-more"
+                data-title="Șampon Atomy"
+                data-img="poze/sampon.jpg"
+                data-desc="Șamponul Atomy conține extracte naturale, nu conține sulfați agresivi și este ideal pentru păr sensibil sau deteriorat. Oferă volum, strălucire și protecție împotriva factorilor externi."
+                >Citește mai mult</span
+              >
+            </div>
+          </div>
+          <!-- Spirulină -->
+          <div class="product-card" data-category="sanatate">
+            <div class="product-image">
+              <img src="poze/spirulina.jpg" alt="Spirulină Atomy" />
+            </div>
+            <div class="product-info">
+              <h3>Spirulină Atomy</h3>
+              <div class="product-detail">
+                Supliment natural pentru energie și imunitate.
+                <span class="more-text">
+                  Conține proteine, vitamine și minerale esențiale. Susține
+                  detoxifierea, crește vitalitatea și ajută la menținerea
+                  sănătății generale.</span
+                >
+              </div>
+              <span
+                class="read-more"
+                data-title="Spirulină Atomy"
+                data-img="poze/spirulina.jpg"
+                data-desc="Spirulina Atomy este o sursă excelentă de nutrienți, ideală pentru vegetarieni, sportivi sau persoane cu imunitate scăzută. Ajută la detoxifiere, crește nivelul de energie și susține sănătatea organismului."
+                >Citește mai mult</span
+              >
+            </div>
+          </div>
+          <!-- Vitamina C -->
+          <div class="product-card" data-category="sanatate">
+            <div class="product-image">
+              <img src="poze/vitaminaC.jpg" alt="Vitamina C Atomy" />
+            </div>
+            <div class="product-info">
+              <h3>Vitamina C Atomy</h3>
+              <div class="product-detail">
+                Supliment cu vitamina C pentru imunitate și energie.
+                <span class="more-text">
+                  Ajută la protecția celulelor, reduce oboseala și susține
+                  sănătatea pielii. Gust plăcut, potrivit pentru adulți și
+                  copii.</span
+                >
+              </div>
+              <span
+                class="read-more"
+                data-title="Vitamina C Atomy"
+                data-img="poze/vitamina_c.jpg"
+                data-desc="Vitamina C Atomy are o formulă ușor de administrat, cu gust plăcut de fructe. Susține imunitatea, ajută la absorbția fierului și protejează organismul de stresul oxidativ. Recomandată pentru toate vârstele."
+                >Citește mai mult</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Pop-up pentru detalii produs -->
+        <div id="productPopup" class="popup">
+          <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="popupTitle"></h2>
+            <img
+              id="popupImg"
+              src=""
+              alt=""
+              style="
+                max-width: 100%;
+                margin-bottom: 1rem;
+                border-radius: 1rem;
+                box-shadow: 0 2px 10px #eee;
+              "
+            />
+            <p id="popupDesc"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-links">
+              <h4>Link-uri rapide</h4>
+              <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="produse.html">Produse</a></li>
+                <li><a href="formular.html?form=join">Înscrie-te</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-contact">
+              <h4>Contact</h4>
+              <p><i class="fas fa-phone"></i> +40722232528</p>
+              <p><i class="fas fa-envelope"></i>Tatiana David</p>
+              <p><i class="fas fa-map-marker-alt"></i> Alba Iulia, România</p>
+            </div>
+            <div class="footer-social">
+              <h4>Urmărește-ne</h4>
+              <div class="social-icons">
+                <a
+                  href="https://www.facebook.com/tatianadavid66?locale=ro_RO"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 Atomy România. Toate drepturile rezervate.</p>
+          </div>
+        </div>
+      </footer>
+
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

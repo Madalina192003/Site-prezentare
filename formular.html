@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Înscrie-te - Atomy România</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/mobile-menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body data-whatsapp="+40722232528">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <div class="logo" style="display: flex; align-items: center; gap: 2rem">
+          <a href="index.html" style="display: inline-block">
+            <img
+              src="poze/logo1.png"
+              alt="Atomy România"
+              style="height: 8rem; max-width: 100%; object-fit: contain"
+            />
+          </a>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            "
+          >
+            <span
+              style="
+                font-size: 1.7rem;
+                font-weight: 700;
+                line-height: 1.1;
+                color: #00aaff;
+              "
+            >
+              Atomy
+              <span style="color: #00aaff; font-weight: 400">Alba Iulia</span>
+            </span>
+            <span
+              style="
+                font-size: 1.1rem;
+                font-weight: 400;
+                color: #00aaff;
+                display: block;
+              "
+            >
+              - First Line Center
+            </span>
+          </div>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="produse.html">Produse</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="formular.html" class="active">Înscrie-te</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Form Section -->
+    <section class="form-section" style="margin-top: 6rem">
+      <div class="container">
+        <div class="section-header" style="margin-top: 2rem">
+          <h2>Înscrie-te în echipa Atomy</h2>
+          <div class="underline"></div>
+          <p class="mb-3">
+            Completează formularul și vei fi contactat pentru a deveni membru
+            Atomy România.
+          </p>
+        </div>
+        <div class="form-container">
+          <form class="form active" id="joinForm">
+            <div class="form-group">
+              <label for="nume"
+                >Nume complet<span class="required">*</span></label
+              >
+              <input type="text" id="nume" name="nume" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email<span class="required">*</span></label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="telefon"
+                >Telefon<span class="required">*</span></label
+              >
+              <input type="tel" id="telefon" name="telefon" required />
+            </div>
+            <div class="form-group">
+              <label for="mesaj">Mesaj</label>
+              <textarea id="mesaj" name="mesaj" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn primary-btn form-button">
+              Trimite
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-links">
+            <h4>Link-uri rapide</h4>
+            <ul>
+              <li><a href="index.html">Acasă</a></li>
+              <li><a href="produse.html">Produse</a></li>
+              <li><a href="formular.html?form=join">Înscrie-te</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <p><i class="fas fa-phone"></i> +40722232528</p>
+            <p><i class="fas fa-envelope"></i>Tatiana David</p>
+            <p><i class="fas fa-map-marker-alt"></i> Alba Iulia, România</p>
+          </div>
+          <div class="footer-social">
+            <h4>Urmărește-ne</h4>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/tatianadavid66?locale=ro_RO"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Atomy România. Toate drepturile rezervate.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
