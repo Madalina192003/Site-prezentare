@@ -1,0 +1,36 @@
+.info-banner {
+  background-color: #fff3cd;
+  border-bottom: 2px solid #ffc107;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.info-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.info-banner p {
+  margin: 0;
+  color: #856404;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .info-banner {
+    padding: 10px 15px;
+  }
+
+  .info-banner p {
+    font-size: 13px;
+  }
+}
